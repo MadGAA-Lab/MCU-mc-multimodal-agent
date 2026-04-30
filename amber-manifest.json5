@@ -17,7 +17,7 @@
 
   program: {
     image: "ghcr.io/madgaa-lab/mcu-mc-multimodal-agent:latest",
-    entrypoint: "node dist/index.js agentbeats --host 0.0.0.0 --port 9009",
+    entrypoint: "tini -- node dist/index.js agentbeats --host 0.0.0.0 --port 9009",
     env: {
       API_KEY: "${config.api_key}",
       OPENAI_API_KEY: "${config.api_key}",

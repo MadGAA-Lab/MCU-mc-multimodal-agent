@@ -17,7 +17,16 @@ FROM node:22-bookworm-slim
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends curl \
+    && apt-get install -y --no-install-recommends \
+        bash \
+        ca-certificates \
+        curl \
+        dnsutils \
+        iproute2 \
+        netcat-openbsd \
+        openssl \
+        procps \
+        tini \
     && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production \
@@ -37,5 +46,5 @@ COPY --from=build /app/soul.md /app/README.md ./
 
 EXPOSE 9009
 
-ENTRYPOINT ["node", "dist/index.js", "agentbeats"]
+ENTRYPOINT ["tini", "--", "node", "dist/index.js", "agentbeats"]
 CMD ["--host", "0.0.0.0", "--port", "9009"]
