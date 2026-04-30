@@ -1,0 +1,13 @@
+.git
+.github
+third_party
+submissions
+results
+.venv
+.pytest_cache
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+**/state
+**/.DS_Store
