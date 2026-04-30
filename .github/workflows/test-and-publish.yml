@@ -48,9 +48,24 @@ jobs:
 
       - name: Start agent container
         env:
-            SECRETS_JSON: ${{ toJson(secrets) }}
+          API_KEY: ${{ secrets.API_KEY || secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.API_KEY }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL || 'https://api.openai.com/v1' }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || secrets.OPENAI_MODEL || 'gpt-5.4' }}
         run: |
-          echo "$SECRETS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' > .env
+          {
+            echo "API_KEY=${API_KEY}"
+            echo "OPENAI_API_KEY=${OPENAI_API_KEY}"
+            echo "OPENAI_BASE_URL=${OPENAI_BASE_URL}"
+            echo "OPENAI_MODEL=${OPENAI_MODEL}"
+            echo "OPENAI_API_MODE=chat"
+            echo "OPENAI_STRUCTURED_OUTPUTS=true"
+            echo "OPENAI_REQUEST_TIMEOUT_MS=180000"
+            echo "OPENAI_MAX_RETRIES=6"
+            echo "AGENTBEATS_MODEL_EVERY_N_STEPS=4"
+            echo "AGENTBEATS_DEFAULT_HOLD_STEPS=3"
+            echo "AGENTBEATS_MAX_HOLD_STEPS=12"
+          } > .env
           docker run -d -p 9009:9009 --name agent-container --env-file .env $(echo "${{ steps.meta.outputs.tags }}" | head -n1) --host 0.0.0.0 --port 9009
           timeout 30 bash -c 'until curl -sf http://localhost:9009/.well-known/agent-card.json > /dev/null; do sleep 1; done'
 

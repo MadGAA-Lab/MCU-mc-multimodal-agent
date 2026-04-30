@@ -47,21 +47,30 @@ Use repository-level secrets instead:
 
 `Settings -> Secrets and variables -> Actions -> Repository secrets`
 
-Recommended secrets:
+Recommended repository secrets:
 
 ```text
 API_KEY          # model API key used by this agent
 OPENAI_API_KEY   # optional alias; can be the same value as API_KEY
+```
+
+Recommended repository variables:
+
+`Settings -> Secrets and variables -> Actions -> Variables`
+
+```text
 OPENAI_BASE_URL  # optional; use https://api.openai.com/v1 for official OpenAI
 OPENAI_MODEL     # optional; use gpt-5.4 for official OpenAI access
 ```
 
-For the official OpenAI API:
+For the official OpenAI API, set variables to:
 
 ```text
 OPENAI_BASE_URL=https://api.openai.com/v1
 OPENAI_MODEL=gpt-5.4
 ```
+
+If variables are not set, the workflow uses those official OpenAI defaults.
 
 The publish workflow does not need a custom GHCR token. It uses GitHub's
 automatic `GITHUB_TOKEN` with `packages: write`.
