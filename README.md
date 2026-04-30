@@ -25,17 +25,13 @@ provides:
 
 ## Clone
 
-Use recursive clone so the agent implementation is present:
+Clone the wrapper repository, then initialize only the core agent submodule used
+by the Docker build:
 
 ```bash
-git clone --recurse-submodules https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent.git
+git clone https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent.git
 cd MCU-mc-multimodal-agent
-```
-
-If the repository was cloned without submodules:
-
-```bash
-git submodule update --init --recursive
+git submodule update --init --recursive mc-multimodal-agent
 ```
 
 ## Required GitHub Configuration
@@ -112,7 +108,7 @@ Start the Docker container first, then run:
 
 ```bash
 uv sync --extra test
-uv run pytest -v --agent-url http://127.0.0.1:9009
+uv run pytest -v tests --agent-url http://127.0.0.1:9009
 ```
 
 Expected result:
@@ -166,7 +162,7 @@ Pushing to `main` triggers:
 
 The workflow:
 
-1. checks out this repository with submodules;
+1. checks out this repository and the `mc-multimodal-agent` submodule only;
 2. builds the Docker image;
 3. starts the A2A service;
 4. runs A2A conformance tests;

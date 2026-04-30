@@ -22,8 +22,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Checkout core agent submodule
+        run: git submodule update --init --recursive mc-multimodal-agent
 
       - name: Extract metadata for Docker
         id: meta
@@ -76,7 +77,7 @@ jobs:
         run: uv sync --extra test
 
       - name: Run tests
-        run: uv run pytest -v --agent-url http://localhost:9009
+        run: uv run pytest -v tests --agent-url http://localhost:9009
 
       - name: Stop container and show logs
         if: always()
