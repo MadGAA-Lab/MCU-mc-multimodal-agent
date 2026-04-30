@@ -1,0 +1,9 @@
+[submodule "third_party/Minecraft-agentbeats"]
+	path = third_party/Minecraft-agentbeats
+	url = https://github.com/RDI-Foundation/Minecraft-agentbeats
+[submodule "third_party/MCU-Purple-Baseline"]
+	path = third_party/MCU-Purple-Baseline
+	url = https://github.com/guthsplan/MCU-Purple-Baseline
+[submodule "src/mc-multimodal-agent"]
+	path = src/mc-multimodal-agent
+	url = https://github.com/win10ogod/mc-multimodal-agent
