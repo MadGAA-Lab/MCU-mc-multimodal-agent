@@ -225,7 +225,7 @@ the Amber manifest. For direct Docker scenarios, use:
 
 ```toml
 [[participants]]
-agentbeats_id = "<your-purple-agent-id>"
+agentbeats_id = "019ddef4-91b9-75e0-8d4f-e2eeb0bd8f3a"
 name = "agent"
 
 [participants.env]
