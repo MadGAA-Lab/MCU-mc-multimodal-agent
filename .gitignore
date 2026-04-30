@@ -12,3 +12,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local-only scratch (never committed)
+local_tests/
+.local/
