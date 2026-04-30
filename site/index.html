@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MCU mc-multimodal-agent: a Mineflayer + OpenAI multimodal Minecraft agent that plays from first-person frames, packaged as an AgentBeats / Amber submission.">
+    <meta name="keywords" content="Minecraft agent, Mineflayer, multimodal LLM, AgentBeats, Amber, A2A protocol, OpenAI Responses API, vision agent">
+    <meta name="author" content="MadGAA-Lab">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MCU mc-multimodal-agent — Minecraft Multimodal Agent">
+    <meta property="og:description"
+        content="A Mineflayer + OpenAI multimodal Minecraft agent with visual-first control, layered memory, and AgentBeats A2A packaging.">
+    <meta property="og:image" content="images/mcu-agent.png">
+    <meta property="og:type" content="website">
+
+    <title>MCU mc-multimodal-agent — Minecraft Multimodal Agent</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/mcu-agent.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="https://github.com/MadGAA-Lab/" class="nav-logo">
+                <img src="images/logo.jpg" alt="MadGAA-Lab" class="nav-logo-img">
+                <span>MadGAA-Lab</span>
+            </a>
+            <div class="nav-links">
+                <a href="https://github.com/MadGAA-Lab/">Home</a>
+                <a href="https://github.com/MadGAA-Lab/" class="active">Projects</a>
+                <a href="https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <article class="article">
+            <!-- Header -->
+            <header class="article-header">
+                <h1>MCU mc-multimodal-agent — Minecraft Multimodal Agent</h1>
+
+                <!-- Badges Section -->
+                <div class="badges-container">
+                    <a href="https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent" target="_blank" rel="noopener" class="badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        Wrapper Repo
+                    </a>
+                    <a href="https://github.com/win10ogod/mc-multimodal-agent" target="_blank" rel="noopener" class="badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        Core Agent
+                    </a>
+                    <a href="https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent#run-locally" class="badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Docs
+                    </a>
+                    <a href="https://raw.githubusercontent.com/MadGAA-Lab/MCU-mc-multimodal-agent/main/amber-manifest.json5" target="_blank" rel="noopener" class="badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Amber Manifest
+                    </a>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="hero-figure">
+                <img src="images/mcu-agent.png" alt="MCU Minecraft Multimodal Agent" class="hero-image" style="max-width:320px;margin:0 auto;display:block;">
+            </figure>
+
+            <!-- Introduction -->
+            <section class="content-section">
+                <p class="lead">
+                    Most Minecraft bots cheat: they read raw world state, query block coordinates directly, and
+                    move with privileged APIs no human player has. <strong>MCU mc-multimodal-agent</strong> takes
+                    the harder path — it plays Minecraft the way a person does, by <em>looking at the screen</em>
+                    and <em>acting through screen coordinates</em>, driven by a multimodal LLM loop on top of
+                    Mineflayer.
+                </p>
+
+                <p>
+                    This repository is the formal <strong>AgentBeats / Amber submission wrapper</strong> for the core
+                    <a href="https://github.com/win10ogod/mc-multimodal-agent" target="_blank" rel="noopener"><code>mc-multimodal-agent</code></a>
+                    project. It packages the Node agent into a reproducible Docker image, exposes an
+                    <strong>A2A (Agent-to-Agent)</strong> JSON-RPC endpoint on port <code>9009</code>, and ships a CI
+                    workflow that builds, tests, and publishes the image to GitHub Container Registry on every push to
+                    <code>main</code>.
+                </p>
+
+                <p>
+                    The agent is built around an OpenClaw-style turn loop: each step composes an active prompt from
+                    persistent memory, sends a first-person frame and tool catalog to the model, executes the chosen
+                    tool, records the outcome, and compacts long context into LevelDB-backed layered memory notes —
+                    so it can pursue goals that span hours of in-game time without losing the thread.
+                </p>
+            </section>
+
+            <!-- Key Numbers -->
+            <section class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-number">1st-person</span>
+                    <span class="stat-label">Visual Input</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">A2A</span>
+                    <span class="stat-label">JSON-RPC Protocol</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">9009</span>
+                    <span class="stat-label">Service Port</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">LevelDB</span>
+                    <span class="stat-label">Layered Memory</span>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="content-section">
+                <h2 id="how-it-works">How does it work?</h2>
+
+                <p>
+                    Every turn, the agent receives a rendered first-person Minecraft frame and the current memory
+                    snapshot. The model returns a single structured action — either a <code>tool_call</code>, an
+                    ordered <code>tool_calls</code> batch, or a <code>final</code> answer. The host process executes
+                    the tool against Mineflayer, captures the outcome, and feeds the next frame back into the loop.
+                </p>
+
+                <div class="info-grid">
+                    <div class="info-card doctor">
+                        <div class="info-card-header">
+                            <img src="images/mcu-agent.png" alt="Multimodal Agent" class="info-icon">
+                            <h3>Capabilities</h3>
+                        </div>
+                        <ul>
+                            <li>✓ Multimodal LLM loop with image input + function tools</li>
+                            <li>✓ Visual-first control via screen coordinates</li>
+                            <li>✓ Mineflayer movement, digging, placing, crafting, chat</li>
+                            <li>✓ Pathfinding and inventory management</li>
+                            <li>✓ Blueprint loading and bottom-up block placement</li>
+                            <li>✓ Nearby-player imitation traces</li>
+                        </ul>
+                    </div>
+                    <div class="info-card patient">
+                        <div class="info-card-header">
+                            <img src="images/logo.jpg" alt="Memory & Skills" class="info-icon">
+                            <h3>Memory &amp; Skills</h3>
+                        </div>
+                        <ul>
+                            <li>✓ Persistent goal trees for long autonomous tasks</li>
+                            <li>✓ LevelDB-backed layered memory notes</li>
+                            <li>✓ Indexed recall + recent transcript context</li>
+                            <li>✓ Pre-compaction durable flushes</li>
+                            <li>✓ Skill snapshots learned via <code>record_skill</code></li>
+                            <li>✓ <code>soul.md</code> persona loaded every turn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>
+                    The agent supports both the <strong>OpenAI Responses API</strong> and <strong>Chat Completions</strong>,
+                    including any OpenAI-compatible base URL. Structured outputs constrain each turn to a strict JSON
+                    schema, and transient transport failures (<code>429</code>, <code>5xx</code>, socket resets, timeouts)
+                    are retried with exponential backoff before the task gracefully checkpoints.
+                </p>
+            </section>
+
+            <!-- Pipeline -->
+            <section class="content-section">
+                <h2 id="pipeline">What's in this submission wrapper</h2>
+
+                <ul class="feature-list">
+                    <li><strong>Amber manifest</strong> — <code>amber-manifest.json5</code> registers the agent with AgentBeats and exposes one A2A endpoint on port 9009</li>
+                    <li><strong>Dockerfile</strong> — Builds the Node AgentBeats A2A service from the <code>mc-multimodal-agent</code> submodule into a deployable image</li>
+                    <li><strong>A2A conformance tests</strong> — <code>pytest</code> suite that hits a running container and validates agent-card and message endpoints</li>
+                    <li><strong>CI workflow</strong> — <code>.github/workflows/test-and-publish.yml</code> builds, runs the conformance suite, and publishes to GHCR on every push to <code>main</code></li>
+                    <li><strong>Core agent submodule</strong> — <code>mc-multimodal-agent/</code> is the upstream agent: Mineflayer bot, multimodal turn loop, memory, tool catalog, blueprints, and skills</li>
+                    <li><strong>Published image</strong> — <code>ghcr.io/madgaa-lab/mcu-mc-multimodal-agent:latest</code> is pullable by the AgentBeats evaluator without local build steps</li>
+                </ul>
+            </section>
+
+            <!-- Quick Start -->
+            <section class="content-section">
+                <h2 id="quickstart">Quick Start</h2>
+
+                <pre class="code-block"><code><span class="comment"># Clone the wrapper and the core agent submodule</span>
+git clone https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent.git
+cd MCU-mc-multimodal-agent
+git submodule update --init --recursive mc-multimodal-agent
+
+<span class="comment"># Build the submission image</span>
+docker build -t mcu-mc-multimodal-agent .
+
+<span class="comment"># Run with official OpenAI</span>
+docker run --rm -p 9009:9009 \
+  -e API_KEY="$OPENAI_API_KEY" \
+  -e OPENAI_API_KEY="$OPENAI_API_KEY" \
+  -e OPENAI_BASE_URL="https://api.openai.com/v1" \
+  -e OPENAI_MODEL="gpt-5.4" \
+  mcu-mc-multimodal-agent
+
+<span class="comment"># Health check (works without an API key)</span>
+curl http://127.0.0.1:9009/.well-known/agent-card.json
+
+<span class="comment"># Or pull the prebuilt image directly from GHCR</span>
+docker pull ghcr.io/madgaa-lab/mcu-mc-multimodal-agent:latest
+
+<span class="comment"># Run A2A conformance tests against a running container</span>
+uv sync --extra test
+uv run pytest -v tests --agent-url http://127.0.0.1:9009</code></pre>
+            </section>
+
+            <!-- Environment Variables -->
+            <section class="content-section">
+                <h2 id="env">Environment Variables</h2>
+
+                <p>The container reads its model configuration from environment variables — no provider is hard-coded.
+                Any OpenAI-compatible endpoint works as long as it implements Chat Completions with structured outputs.</p>
+
+                <ul class="feature-list">
+                    <li><strong>API_KEY</strong> — Model API key (required); also mirrored as <code>OPENAI_API_KEY</code></li>
+                    <li><strong>OPENAI_BASE_URL</strong> — Provider base URL (default: <code>https://api.openai.com/v1</code>)</li>
+                    <li><strong>OPENAI_MODEL</strong> — Model name (default: <code>gpt-5.4</code>; use <code>gpt-5.5</code> for hard visual planning)</li>
+                    <li><strong>AGENTBEATS_MODEL_EVERY_N_STEPS</strong> — How often the model is consulted between cheap deterministic steps (default: <code>4</code>)</li>
+                    <li><strong>AGENTBEATS_DEFAULT_HOLD_STEPS</strong> — Default hold/wait steps between actions (default: <code>3</code>)</li>
+                    <li><strong>AGENTBEATS_MAX_HOLD_STEPS</strong> — Upper bound on hold steps before forcing a model turn (default: <code>12</code>)</li>
+                </ul>
+            </section>
+
+            <!-- Citation -->
+            <section class="content-section citation-section">
+                <h2 id="citation">Citation</h2>
+
+                <p>If you use the MCU mc-multimodal-agent submission in your research or evaluation, please cite:</p>
+
+                <pre class="code-block bibtex"><code>@software{mcu_mc_multimodal_agent,
+  title  = {MCU mc-multimodal-agent: AgentBeats Submission Wrapper for a Multimodal Minecraft Agent},
+  author = {MadGAA-Lab},
+  year   = {2026},
+  url    = {https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent},
+  note   = {Formal AgentBeats / Amber submission wrapping win10ogod/mc-multimodal-agent}
+}</code></pre>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2026 MadGAA-Lab · <a href="https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent">GitHub</a> · MIT License</p>
+        </div>
+    </footer>
+</body>
+
+</html>
