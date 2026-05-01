@@ -7,7 +7,7 @@
 [![Build & Publish](https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent/actions/workflows/test-and-publish.yml/badge.svg)](https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent/actions/workflows/test-and-publish.yml)
 [![Container](https://img.shields.io/badge/ghcr.io-madgaa--lab%2Fmcu--mc--multimodal--agent-2496ED?logo=docker&logoColor=white)](https://github.com/MadGAA-Lab/MCU-mc-multimodal-agent/pkgs/container/mcu-mc-multimodal-agent)
 [![A2A](https://img.shields.io/badge/protocol-A2A-7B61FF)](#run-a2a-tests)
-[![License](https://img.shields.io/badge/license-See%20repo-lightgrey)](#)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 <sub>Submission wrapper for <a href="https://github.com/win10ogod/mc-multimodal-agent"><code>win10ogod/mc-multimodal-agent</code></a> — the real agent lives in the <code>mc-multimodal-agent</code> submodule.</sub>
 
