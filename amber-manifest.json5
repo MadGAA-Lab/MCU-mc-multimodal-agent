@@ -30,6 +30,7 @@
       AGENTBEATS_MODEL_EVERY_N_STEPS: "${config.model_every_n_steps}",
       AGENTBEATS_DEFAULT_HOLD_STEPS: "${config.default_hold_steps}",
       AGENTBEATS_MAX_HOLD_STEPS: "${config.max_hold_steps}",
+      AGENTBEATS_USE_TOOL_AGENT: "true",
     },
     network: {
       endpoints: [
