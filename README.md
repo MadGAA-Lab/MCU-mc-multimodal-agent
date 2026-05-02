@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="images/banner.png" alt="MCU · mc-multimodal-agent — A Minecraft multimodal agent for AgentBeats / Amber" width="100%" />
+
 # MCU · mc-multimodal-agent
 
 **A Minecraft multimodal agent, packaged for AgentBeats / Amber.**
