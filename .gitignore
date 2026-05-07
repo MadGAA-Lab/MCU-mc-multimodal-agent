@@ -16,3 +16,6 @@ wheels/
 # Local-only scratch (never committed)
 local_tests/
 .local/
+
+# Agent-specific files
+.claude/
